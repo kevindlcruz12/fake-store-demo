@@ -4,6 +4,7 @@ import com.tecnoin.sv.application.dto.UserLoginDto;
 import com.tecnoin.sv.application.dto.UserRegistrationDto;
 import com.tecnoin.sv.application.service.ApplicationUserService;
 import com.tecnoin.sv.infrastructure.security.JwtTokenProvider;
+import com.tecnoin.sv.shared.dto.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -44,6 +45,6 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = tokenProvider.generateToken(authentication);
 
-        return ResponseEntity.ok().body(jwt);
+        return ResponseEntity.ok().body(ApiResponse.success(jwt));
     }
 }
