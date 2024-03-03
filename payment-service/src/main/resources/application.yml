@@ -1,0 +1,42 @@
+server:
+  port: ${SERVER_PORT:8092}
+
+spring:
+  application:
+    name: product-service
+  main:
+    allow-bean-definition-overriding: true
+
+  # Configuraciones para Feign Client
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+
+feign:
+  fakestoreapi:
+    url: ${FAKE_STORE_API_URL:https://fakestoreapi.com} # URL predeterminada de la API, puede ser sobrescrita por una variable de entorno
+
+app:
+  jwtSecret: ${JWT_SECRET:YourSecretKeyHere} # Usa una variable de entorno para el secreto, con un valor predeterminado para desarrollo
+  jwtExpirationMs: ${JWT_EXPIRATION_MS:3600000} # Tiempo de expiración del token JWT en milisegundos
+
+logging:
+  level:
+    root: INFO
+    com.tecnoin.sv: DEBUG # Ajusta el nivel de logging para tu paquete específico para facilitar la depuración
+
+# Ejemplo de cómo sobrescribir estas propiedades con variables de entorno en tu entorno de producción o desarrollo:
+# export SERVER_PORT=8081
+# export JWT_SECRET=AnotherSecretKey
+# export JWT_EXPIRATION_MS=7200000
+# export FAKE_STORE_API_URL=https://newfakestoreapi.com
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

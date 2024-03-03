@@ -1,6 +1,11 @@
-app:
-  jwtSecret: YourSecretKeyHere
-  jwtExpirationMs: 3600000
+server:
+  port: ${SERVER_PORT:8088} # Puerto predeterminado es 8080, se puede sobrescribir con una variable de entorno
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
 
 spring:
   datasource:
@@ -13,12 +18,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-server:
-  port: 8084
-
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+  cloud:
+    compatibility-verifier:
+      enabled: false

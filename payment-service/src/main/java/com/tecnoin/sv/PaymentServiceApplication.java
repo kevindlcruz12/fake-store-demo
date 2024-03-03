@@ -2,14 +2,12 @@ package com.tecnoin.sv;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
-public class SecurityServiceApplication {
+public class PaymentServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SecurityServiceApplication.class, args);
+        SpringApplication.run(PaymentServiceApplication.class, args);
     }
 
 }
