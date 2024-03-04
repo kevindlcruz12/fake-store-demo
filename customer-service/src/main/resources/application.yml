@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:8088} # Puerto predeterminado es 8080, se puede sobrescribir con una variable de entorno
+  port: 8088 # Puerto predeterminado es 8080, se puede sobrescribir con una variable de entorno
 
 springdoc:
   api-docs:

@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:8086}
+  port: 8086
 spring:
   application:
     name: product-service
@@ -20,12 +20,6 @@ spring:
   cloud:
     compatibility-verifier:
       enabled: false
-    openfeign:
-      client:
-        config:
-          default:
-            connectTimeout: 5000
-            readTimeout: 5000
 
 logging:
   level:
@@ -44,9 +38,4 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-#  instance:
-#    preferIpAddress: true
+
