@@ -1,5 +1,9 @@
 server:
-  port: 8088 # Puerto predeterminado es 8080, se puede sobrescribir con una variable de entorno
+  port: 8088
+
+app:
+  jwtSecret: c717ae5065c1b297def63ab78cc5e3bbaaa7aba445d91ff31c8ea025ef214633
+  jwtExpirationMs: 3600000
 
 springdoc:
   api-docs:
