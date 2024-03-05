@@ -2,6 +2,8 @@ package com.tecnoin.sv.infrastructure.web.controller;
 
 import com.tecnoin.sv.application.dto.OrderDto;
 import com.tecnoin.sv.application.service.OrderApplicationService;
+import com.tecnoin.sv.domain.entity.Order;
+import com.tecnoin.sv.shared.dto.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,17 +22,20 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
-        return ResponseEntity.ok(orderService.createOrder(orderDto));
+    public ResponseEntity<?> createOrder(@RequestBody OrderDto orderDto) {
+        OrderDto order = orderService.createOrder(orderDto);
+        return ResponseEntity.ok(ApiResponse.success(orderDto));
     }
 
     @GetMapping("/{orderId}")
-    public ResponseEntity<OrderDto> getOrderById(@PathVariable Long orderId) {
-        return ResponseEntity.ok(orderService.getOrderById(orderId));
+    public ResponseEntity<?> getOrderById(@PathVariable Long orderId) {
+        OrderDto order = orderService.getOrderById(orderId);
+        return ResponseEntity.ok(ApiResponse.success(order));
     }
 
     @GetMapping("/customer/{customerId}")
-    public ResponseEntity<List<OrderDto>> getAllOrdersByCustomerId(@PathVariable Long customerId) {
-        return ResponseEntity.ok(orderService.getAllOrdersByCustomerId(customerId));
+    public ResponseEntity<?> getAllOrdersByCustomerId(@PathVariable Long customerId) {
+        List<OrderDto> order = orderService.getAllOrdersByCustomerId(customerId);
+        return ResponseEntity.ok(ApiResponse.success(order));
     }
 }

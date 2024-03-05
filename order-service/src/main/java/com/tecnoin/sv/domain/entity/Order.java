@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "orders") // Asegúrate de que el nombre de la tabla coincida con el que tienes en tu base de datos
+@Table(name = "orders")
 @Getter
 @Setter
 public class Order {

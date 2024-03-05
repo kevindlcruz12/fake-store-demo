@@ -1,4 +1,4 @@
-package com.tecnoin.sv.infrastructure.web.client;
+package com.tecnoin.sv.infrastructure.web.controller;
 
 import com.tecnoin.sv.application.dto.CustomerCreationDto;
 import com.tecnoin.sv.application.dto.CustomerDto;
