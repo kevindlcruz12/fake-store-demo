@@ -38,10 +38,10 @@ enabled: false
 ## Servicios y Puertos
 
 security-service: Autenticación y generación de tokens JWT. **Puerto: 8084**
-order-service: Gestión de órdenes. **Puerto: 8082**
-customer-service: Administración de clientes. **Puerto: 8083**
-product-service: Manejo de productos mediante API externa. **Puerto: 8084**
-payment-service: Simulación de procesamiento de pagos. **Puerto: 8085**
+order-service: Gestión de órdenes. **Puerto: 8090**
+customer-service: Administración de clientes. **Puerto: 8088**
+product-service: Manejo de productos mediante API externa. **Puerto: 8086**
+payment-service: Simulación de procesamiento de pagos. **Puerto: 8092**
 
 ## Swagger UI para Documentación de la API
 
